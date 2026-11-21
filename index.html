@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e8">
+  <title>A Little Anniversary Surprise</title>
+  <style>
+    :root{--ink:#25233a;--muted:#706d7c;--paper:#fffdf9;--coral:#e97863;--gold:#f2bd59;--lav:#dcd8f3;--line:#e9e3da}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 8% 15%,#f9dfd3 0,transparent 28%),radial-gradient(ellipse at 95% 86%,#e3def7 0,transparent 30%),#f7f1e8;color:var(--ink);font-family:ui-rounded,"Avenir Next",Avenir,"Segoe UI",sans-serif;display:grid;place-items:center;padding:28px}
+    .shell{width:min(100%,720px);position:relative}.spark{position:absolute;font-size:24px;color:var(--coral)}.s1{top:-22px;right:9%}.s2{left:-24px;top:38%}.card{background:var(--paper);border:1px solid #fff;border-radius:28px;box-shadow:0 24px 70px #59442b18;padding:clamp(28px,7vw,62px);position:relative;overflow:hidden}.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-weight:800;font-size:11px;color:#9d7466;display:flex;gap:9px;align-items:center}.eyebrow:before{content:"";width:25px;height:2px;background:var(--coral)}h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,8vw,66px);line-height:.98;letter-spacing:-.045em;margin:22px 0 18px;max-width:560px}.intro{font-size:18px;line-height:1.7;color:#5e5b69;max-width:560px;margin:0 0 26px}.note{border-left:3px solid var(--gold);padding:3px 0 3px 18px;color:#646170;line-height:1.75;margin:28px 0 34px}.note strong{color:var(--ink)}.button{appearance:none;border:0;border-radius:999px;background:var(--ink);color:white;padding:15px 23px;font:700 15px inherit;font-size:15px;cursor:pointer;box-shadow:0 8px 18px #25233a22;transition:transform .18s,background .18s}.button:hover{transform:translateY(-2px);background:#383552}.button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #edaf7b;outline-offset:3px}.hidden{display:none!important}.step{animation:rise .45s ease both}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.field{margin:24px 0 16px}label{display:block;font-weight:750;margin-bottom:10px;font-size:16px}textarea{display:block;width:100%;min-height:120px;resize:vertical;border:1.5px solid var(--line);border-radius:16px;padding:16px;background:#fffefa;color:var(--ink);font:inherit;font-size:16px;line-height:1.5}textarea::placeholder{color:#aaa6b0}.hint{font-size:13px;color:#888491;margin:8px 2px}.reveal{text-align:center}.seal{display:grid;place-items:center;width:78px;height:78px;border-radius:50%;margin:0 auto 21px;background:#fff0d5;font-size:36px}.reveal h1{margin-left:auto;margin-right:auto}.reveal .intro{margin-left:auto;margin-right:auto}.ticket{margin:32px auto 26px;max-width:490px;display:grid;grid-template-columns:1fr 102px;background:#fff;border:1.5px solid #e7d3aa;border-radius:18px;overflow:hidden;text-align:left;box-shadow:0 12px 30px #463a2510}.ticket-main{padding:24px 27px}.ticket-side{background:#f4c86b;display:grid;place-items:center;position:relative;font-size:35px}.ticket-side:before,.ticket-side:after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:var(--paper);left:-10px}.ticket-side:before{top:-10px}.ticket-side:after{bottom:-10px}.ticket-label{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:850;color:#9d7466}.movie{font-family:Georgia,serif;font-weight:700;font-size:26px;line-height:1.1;margin:10px 0 14px}.ticket-meta{font-size:13px;color:#6f6b75;line-height:1.7}.ticket-side span{writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:900;color:#54452c}.closing{font-size:15px;color:#686573;line-height:1.7}.footer{margin-top:22px;text-align:center;font-size:12px;color:#918c99}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}.confetti i{position:absolute;top:-20px;width:9px;height:13px;background:var(--coral);animation:fall 2.4s linear forwards}.confetti i:nth-child(3n){background:var(--gold)}.confetti i:nth-child(3n + 1){background:#aaa3df}@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:.8}}
+    .options{display:grid;gap:12px}.option{display:flex;align-items:center;gap:13px;border:1.5px solid var(--line);border-radius:15px;padding:15px 16px;background:#fffefa;cursor:pointer;font-size:16px;line-height:1.45}.option:has(input:checked){border-color:var(--coral);background:#fff6f1}.option input{accent-color:var(--coral);width:18px;height:18px;flex:0 0 auto}.option b{color:#a56b5d;margin-right:6px}
+    .ticket-art{display:block;width:100%;height:auto;max-width:620px;margin:30px auto 10px;border-radius:16px;box-shadow:0 15px 38px #07171330}.ticket-caption{margin:8px 0 24px;font-size:14px;color:#686573;font-weight:700}.option-b{position:relative;z-index:1;transition:transform .22s cubic-bezier(.2,.8,.2,1);user-select:none}.option-b:hover{border-color:var(--coral)}.option-b:active{transform:scale(.98)}
+    @media(max-width:520px){body{padding:16px}.card{border-radius:23px}.s2{left:-9px}.ticket{grid-template-columns:1fr 72px}.ticket-main{padding:21px 18px}.movie{font-size:23px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+    /* Playful anniversary ticket-shop direction */
+    body{background:#b9d8b0;color:#4e171d;font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif;padding:42px 24px}
+    .shell{width:min(100%,690px)}
+    .spark{color:#a82430}.s1{top:-20px;right:8%;color:#f6d4c5}.s2{left:-27px;top:38%;color:#ffe2bf}
+    .card{background:#fff5e4;border:2px solid #70202a;border-radius:18px;box-shadow:0 18px 0 #71966a,0 25px 55px #325c3233;padding:clamp(26px,6vw,54px);overflow:hidden}
+    .browser-bar{height:36px;margin:calc(clamp(26px,6vw,54px) * -1) calc(clamp(26px,6vw,54px) * -1) 34px;padding:0 16px;background:#cce0bd;border-bottom:2px solid #70202a;display:flex;align-items:center;justify-content:space-between;color:#8e3039;font-family:Georgia,serif;font-size:13px}
+    .browser-hearts{letter-spacing:3px;color:#bd4551;font-size:14px}.browser-close{font-family:Arial,sans-serif;font-size:18px;line-height:1}
+    .eyebrow{color:#9a3941;letter-spacing:.15em}.eyebrow:before{background:#be3747}
+    h1{font-family:Georgia,"Times New Roman",serif;color:#4c151b;letter-spacing:-.035em;font-weight:700}
+    .intro{color:#69484a}
+    .note{border-left:3px solid #b52f40;color:#65474a;background:#e5efd8;padding:17px 18px;border-radius:0 12px 12px 0}
+    .button{background:#a92231;color:#fff5e7;box-shadow:0 5px 0 #6e1e28,0 10px 20px #6b1b2226;font-weight:750}
+    .button:hover{background:#831c28;transform:translateY(-2px)}
+    .option{border-color:#d69a91;background:#fff8ed;color:#51191f;transition:transform .22s cubic-bezier(.2,.8,.2,1),background .2s,border-color .2s}
+    .option:has(input:checked){border-color:#a92231;background:#e6f0d9}.option-b{color:#51191f}
+    .hint{color:#95696a}
+    .seal{background:#dce9cc;color:#982936}
+    .ticket-art{border:2px solid #4c171d;border-radius:10px;box-shadow:0 12px 0 #d18c7e,0 18px 34px #64222b30}
+    .ticket-caption{color:#7f3038}
+    .closing{color:#69484a}
+    .footer{color:#70252d;font-family:Georgia,serif;font-style:italic}
+    @media(max-width:520px){body{padding:28px 15px}.card{border-radius:15px}.s2{left:-6px}.browser-bar{margin-bottom:27px}.ticket-art{border-radius:8px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <span class="spark s1" aria-hidden="true">✳</span><span class="spark s2" aria-hidden="true">✦</span>
+    <section class="card" aria-live="polite">
+      <div class="browser-bar" aria-hidden="true"><span class="browser-hearts">♥ ♥ ♥</span><span>THE ANNIVERSARY CLUB</span><span class="browser-close">×</span></div>
+      <div id="welcome" class="step">
+        <div class="eyebrow">A note for Joseph &amp; his favorite person</div>
+        <h1>Happy 1st Wedding Anniversary 🎉🎉🎉</h1>
+        <p class="intro">Can’t believe I’m saying this to the bookworm I met about 9 years ago in that institution that nearly took our lives.</p>
+        <div class="note">And also to the amazing woman that the same institution gave him to cope with life’s anxieties (because yes, LASU was indeed after our lives 😭). I’ve never been prouder to even be acquainted—not to talk of being friends—with humans as amazing as you both are. Being part of your groomsmen last year was the highlight of my year, and I hope that you both forever remain deep in love as you continue to push each other to the best versions of yourselves.<br><br>Now that the sap is out of the way 😆, you only need to answer one simple question to receive what is on the other end of this.</div>
+        <button class="button" id="start">Continue <span aria-hidden="true">→</span></button>
+      </div>
+
+      <form id="guessForm" class="step hidden">
+        <div class="eyebrow">One simple question</div>
+        <h1>Who is Joseph’s greatest friend (other than his wife)?</h1>
+        <div class="field"><div class="options">
+          <label class="option"><input type="radio" name="answer" value="Emmanuel" required><span><b>A:</b> Emmanuel</span></label>
+          <button class="option option-b" id="wrongAnswer" type="button"><span aria-hidden="true">B:</span> Someone who is not Emmanuel 😒</button>
+        </div><p class="hint">Choose wisely. Joseph might be watching.</p></div>
+        <button class="button" type="submit">Submit answer <span aria-hidden="true">→</span></button>
+      </form>
+
+      <div id="reveal" class="step hidden reveal">
+        <div class="seal" aria-hidden="true">🎟️</div>
+        <div class="eyebrow" style="justify-content:center">Surprise!</div>
+        <h1>Your next date night is on me.</h1>
+        <p class="intro">You’re going to see <strong>Marvel Studios’ Avengers: Doomsday</strong> together this December!</p>
+        <img class="ticket-art" src="avengers-doomsday-ticket-stubs.png" alt="Two Avengers: Doomsday ticket stubs">
+        <p class="ticket-caption">Two tickets · This December · Popcorn is practically required 🍿</p>
+        <p class="closing">Happy anniversary, you two. Hope you have the best time—and the most dramatic popcorn debate. <span aria-hidden="true">♥</span></p>
+      </div>
+    </section>
+    <div class="footer">Made with love for your first trip around the sun as a married couple ✨</div>
+  </main>
+  <script>
+    const welcome = document.getElementById('welcome');
+    const form = document.getElementById('guessForm');
+    const reveal = document.getElementById('reveal');
+    document.getElementById('start').addEventListener('click', () => { welcome.classList.add('hidden'); form.classList.remove('hidden'); form.querySelector('input').focus(); });
+    const wrongAnswer = document.getElementById('wrongAnswer');
+    let dodgeCount = 0;
+    function dodgeWrongAnswer(event){
+      if(event.type === 'pointerdown') event.preventDefault();
+      const distance = Math.min(16, 4 + dodgeCount * 1.5);
+      const x = Math.round((Math.random() * 2 - 1) * distance);
+      const y = Math.round((Math.random() * 2 - 1) * Math.min(38, 16 + dodgeCount * 3));
+      wrongAnswer.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 8 - 4}deg)`;
+      dodgeCount++;
+    }
+    wrongAnswer.addEventListener('pointerenter', dodgeWrongAnswer);
+    wrongAnswer.addEventListener('pointerdown', dodgeWrongAnswer);
+    wrongAnswer.addEventListener('focus', dodgeWrongAnswer);
+    wrongAnswer.addEventListener('click', event => { event.preventDefault(); dodgeWrongAnswer(event); });
+    form.addEventListener('submit', event => { event.preventDefault(); if (!form.reportValidity()) return; form.classList.add('hidden'); reveal.classList.remove('hidden'); celebrate(); });
+    function celebrate(){
+      const layer = document.createElement('div'); layer.className = 'confetti'; layer.setAttribute('aria-hidden','true');
+      for(let i=0;i<54;i++){const bit=document.createElement('i');bit.style.left=Math.random()*100+'vw';bit.style.animationDelay=Math.random()*.9+'s';bit.style.transform=`rotate(${Math.random()*360}deg)`;layer.appendChild(bit)}
+      document.body.appendChild(layer); setTimeout(()=>layer.remove(),3500);
+    }
+  </script>
+</body>
+</html>
